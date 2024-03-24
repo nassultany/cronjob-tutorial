@@ -1,8 +1,9 @@
 # cronjob-tutorial
-// TODO(user): Add simple overview of use/purpose
+Created following the kubebuilder [tutorial](https://book.kubebuilder.io/cronjob-tutorial/cronjob-tutorial)
 
 ## Description
-// TODO(user): An in-depth paragraph about your project and overview of use
+A simple kubernetes operator that manages CronJobs, allowing users to create one-off jobs to run on the cluster at 
+specified intervals. Builds on top of the Job controller.
 
 ## Getting Started
 
@@ -68,33 +69,12 @@ make undeploy
 
 ## Project Distribution
 
-Following are the steps to build the installer and distribute this project to users.
-
-1. Build the installer for the image built and published in the registry:
+The project can also simply be installed using the yaml in the dist folder.
 
 ```sh
-make build-installer IMG=<some-registry>/cronjob-tutorial:tag
+kubectl apply -f https://raw.githubusercontent.com/nassultany/cronjob-tutorial/main/dist/install.yaml
 ```
 
-NOTE: The makefile target mentioned above generates an 'install.yaml'
-file in the dist directory. This file contains all the resources built
-with Kustomize, which are necessary to install this project without
-its dependencies.
-
-2. Using the installer
-
-Users can just run kubectl apply -f <URL for YAML BUNDLE> to install the project, i.e.:
-
-```sh
-kubectl apply -f https://raw.githubusercontent.com/<org>/cronjob-tutorial/<tag or branch>/dist/install.yaml
-```
-
-## Contributing
-// TODO(user): Add detailed information on how you would like others to contribute to this project
-
-**NOTE:** Run `make help` for more information on all potential `make` targets
-
-More information can be found via the [Kubebuilder Documentation](https://book.kubebuilder.io/introduction.html)
 
 ## License
 
